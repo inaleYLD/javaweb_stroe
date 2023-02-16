@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.storeapp.mapper.OrderInforMapper">
+    <resultMap id="OrderInforMap" type="com.storeapp.vo.OrderInforVo">
+        <id column="id" property="orderId"/>
+        <result column="state" property="state"/>
+        <result column="name" property="productName"/>
+        <result column="price" property="productPrice"/>
+        <result column="quantity" property="quantity"/>
+        <result column="addressee" property="addressee"/>
+        <result column="phone_num" property="phoneNum"/>
+        <result column="address" property="address"/>
+    </resultMap>
+    <resultMap id="OrderListMap" type="com.storeapp.vo.OrderListVo">
+        <id column="id" property="orderId"/>
+        <result column="state" property="state"/>
+        <result column="name" property="name"/>
+        <result column="image" property="image"/>
+        <result column="price" property="price"/>
+        <result column="quantity" property="quantity"/>
+    </resultMap>
+    <select id="selectOrderInforVo" resultMap="OrderInforMap">
+        select o.id,o.state,p.name,p.price,s.quantity,ua.addressee,ua.phone_num,ua.address
+        from order_infor o
+        inner join user_address ua on o.address_id=ua.id
+        inner join shoppingcart s on s.id=o.cart_id
+        inner join product p on p.id=s.product_id
+        where o.id=#{orderId};
+    </select>
+    <select id="selectOrderListVo" resultMap="OrderListMap">
+        select o.id,o.state,p.name,p.image,p.price,s.quantity
+        from order_infor o
+        inner join shoppingcart s on s.id=o.cart_id
+        inner join product p on p.id=s.product_id
+        where o.user_id=#{userId} order by o.id desc;
+    </select>
+</mapper>
