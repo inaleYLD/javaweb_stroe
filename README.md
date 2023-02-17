@@ -30,7 +30,7 @@
 
 #### 购物车
 
-> ![](\javaweb_stroe\image\购物车.png)
+> ![购物车](\javaweb_stroe\image\购物车.png)
 
 #### 下单界面
 
@@ -38,4 +38,4 @@
 
 #### 订单查询界面
 
-> ![订单查询界面](\javaweb_stroe\image\订单查询界面.png)
+> ![订单查询界面](/javaweb_stroe/image/订单查询界面.png)
