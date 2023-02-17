@@ -38,4 +38,4 @@
 
 #### 订单查询界面
 
-> ![订单查询界面](E:\StoreProjects\javaweb_stroe\image\订单查询界面.png)
+> ![订单查询界面](\javaweb_stroe\image\订单查询界面.png)
