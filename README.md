@@ -30,7 +30,7 @@
 
 #### 购物车
 
-> ![](\image\购物车.png)
+> ![](/javaweb_stroe/blob/main/image/购物车.png)
 
 #### 下单界面
 
